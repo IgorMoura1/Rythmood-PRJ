@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    background-image: url(musicQuizBackground.svg);
+}
+
+.app {
+    background: rgba(242, 242, 242, 0.8);
+    width: 90%;
+    max-width: 600px;
+    margin: 200px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+    align-items: center;
+}
+
+.app h1 {
+    font-weight: 25px;
+    color: #001514;
+    font-weight: 600;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 30px;
+}
+
+.quiz {
+    padding: 20px 0;
+}
+
+.quiz h2{
+    font-size: 18px;
+    color: #001514;
+}
+
+.btn {
+    background: #f5f6f6;
+    color: #1a1a1a;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid #1a1a1a;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover:not([disabled]) {
+    background: #1a1a1a;
+    color: #f5f6f6;
+}
+
+.btn:disabled {
+    cursor: no-drop;
+}
+
+#next-btn {
+    background: #001514;
+    color: #f5f6f6;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+}
+
+.correct 
+
+
+.text-quiz {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.home-btn {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
