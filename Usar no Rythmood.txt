@@ -1,0 +1,1 @@
+listaImagens[parseInt(Math.random() * listaImagens.length)]
