@@ -26,9 +26,9 @@ descoberta varchar(25),
 nacionalidade varchar(25),
 mscImportante varchar(25),
 fkUsuario int, foreign key (fkUsuario) references usuario(id), 
-constraint humor check (humor = 'Feliz' or humor = 'Triste' or humor = 'Alegre' or humor = 'Raiva' or humor = 'Neutro'),
-constraint genero check (genero = 'Dance/eletrônica' or genero = 'Rock' or genero = 'Jazz' or genero = 'R&B' or genero = 'Pop' or genero = 'Rap' or genero = 'Funk' or genero = 'Pagode' or genero = 'Sertanejo' or genero = 'MPB'),
-constraint descoberta check (descoberta = 'Streaming' or descoberta = 'Sociais' or descoberta = 'Amigos' or descoberta = 'Propria' or descoberta = 'Radio'),
+constraint humor check (humor = 'Feliz' or humor = 'Triste' or humor = 'Alegre' or humor = 'Raiva' or humor = 'Neutro' or humor = 'Outro'),
+constraint genero check (genero = 'Dance/eletrônica' or genero = 'Rock' or genero = 'Jazz' or genero = 'R&B' or genero = 'Pop' or genero = 'Rap' or genero = 'Funk' or genero = 'Pagode' or genero = 'Sertanejo' or genero = 'MPB' or genero = 'Outro'),
+constraint descoberta check (descoberta = 'Streaming' or descoberta = 'Sociais' or descoberta = 'Amigos' or descoberta = 'Propria' or descoberta = 'Radio' or descoberta = 'Outro'),
 constraint nacionalidade check (nacionalidade = 'Internacional' or nacionalidade = 'Nacional'),
 constraint mscImportante check (mscImportante = 'Letras' or mscImportante = 'Melodia'));
 
@@ -41,6 +41,8 @@ select * from formulario;
 
 
 ALTER TABLE formulario ADD CONSTRAINT unico UNIQUE (fkUsuario);
+
+drop table formulario;
 
 
 
