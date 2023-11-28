@@ -1,0 +1,812 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@200;400&family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    background: #870ad6;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 1em 2em 2em;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.nav > * {
+    position: relative;
+    animation: fade-down 1s ease-in-out;
+}
+
+
+
+.nav a {
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    padding: 0 1em;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.nav a:hover {
+    transform: scale(2);
+}
+
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes fade-up2 {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes fade-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@media(max-width: 900px) {
+    .nav .nav-links {
+        display: none;
+    }
+
+    .nav {
+        justify-content: center;
+    }
+}
+
+.nav-links a:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.header {
+    width: 100%;
+    height: 30vh;
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .col {
+    width: auto;
+}
+
+.header .col:nth-child(2) {
+    width: 30%;
+}
+
+.header h1 {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 100px;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0;
+    animation: fade-up 0.8s ease-in-out;
+    text-align: justify;
+}
+
+.header h4 {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0;
+    animation: fade-up2 1.5s ease-in-out;
+    text-align: justify
+}
+
+.header-right.col {
+    padding-top: 100px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.play-wrapper {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background-color: #eb5b1e;
+    background-size: cover;
+    border-radius: 50px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0.4em;
+}
+
+/* ----------------------------------------player music ------------------------------------------------ */
+
+.player {
+    width: 640px;
+    background-color: var(--bg);
+    display: grid;
+    grid-template-columns: 48px 1fr 48px;
+    grid-gap: 16px;
+    padding: 8px 24px;
+    position: relative;
+    border-radius: 64px;
+}
+
+.control,#current {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 16px;
+}
+
+#playbtn {
+    font-size: 24px;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+    cursor: pointer;
+}
+
+#playbtn:hover {
+    -webkit-text-fill-color: white;
+}
+
+.info {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: 21px;
+    font-family: 'Asap Condensed', sans-serif;
+    text-transform: uppercase;
+}
+
+#current {
+    text-align: right;
+    font-family: 'Asap Condensed', sans-serif;
+}
+
+.bar {
+    --space: -4px;
+    background-color: #24242424;
+    overflow: hidden;
+    left: var(--space);
+    right: var(--space);
+    top: var(--space);
+    bottom: var(--space);
+    position: absolute;
+    border-radius: 64px;
+    z-index: -2;
+}
+
+#progress {
+    display: blcok;
+    width: var(--progress,0%);
+    background-color: white;
+    transition: all 1s linear;
+    height: 100%;
+}
+
+/* ----------------------------------------player music ------------------------------------------------ */
+
+
+.play-btn {
+    width: 70px;
+    height: 70px;
+    background: #000;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+}
+
+
+
+.play-btn:active {
+    opacity: 0.8;
+    transform: scale(0.9);
+}
+
+
+.play-btn ion-icon {
+    color: #eb5b1e;
+}
+
+.copy p {
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 2;
+    text-align: justify;
+    padding-top: 50px;
+}
+
+.btn-container {
+    width: 100%;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -2em;
+}
+
+
+.divider {
+    width: 70%;
+}
+
+.ht {
+    width: 100%;
+    height: 1px;
+    background: rgb(0, 0, 0, 0.2);
+}
+
+.hero {
+    position: relative;
+    width: 95%;
+    height: 50vh;
+    border-radius: 40px 40px 0 0;
+    margin: 2em auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.hero img {
+    width: 100%;
+}
+
+.hero-wrapper {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background: #eb5b1e;
+}
+
+.arrow {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 4px solid rgb(45, 45, 45);
+    border-radius: 100%;
+    background: #000;
+    top: -1.4em;
+    right: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: #eb5b1e;
+    font-family: "poppins", sans-serif;
+    transform: rotate(-45deg);
+}
+
+.marquee {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 1em 0;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 3;
+    background: #000;
+    display: flex;
+    align-items: center;
+}
+
+.marquee span {
+    font-family: "poppins", sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #eb5b1e;
+    mix-blend-mode: normal !important;
+    font-size: 4em;
+    text-transform: uppercase;
+    padding-left: -10%;
+    animation: marquee-animation 80s linear infinite;
+}
+
+@keyframes marquee-animation {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100, 0);
+    }
+}
+
+/* // --------------------------------- button animation -------------------------------------------// */
+
+
+.btns {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    width: 300px;
+    height: 40px;
+}
+
+.btns {
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+}
+
+.btn a {
+    text-decoration: none;
+    list-style: none;
+    font-family: "poppins", sans-serif;
+}
+
+.btn a:hover {
+    color: #eb5b1e;
+    width: max-content;
+    height: max-content;
+}
+
+.btns span {
+    font-size: 20px;
+}
+
+.btns ion-icon {
+    transform: scale(2);
+}
+
+.btn:active {
+    transform: scale(0.90);
+}
+
+.btn:hover {
+    background-color: #000;
+    color: #eb5b1e;
+}
+
+
+.btn {
+    position: relative;
+    padding: 10px 22px;
+    border-radius: 6px;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    background-color: #eb5b1e;
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+/* ------------------------------------------- antiga home --------------------------------------------- */
+
+.historia {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    font-family: "poppins", sans-serif;
+    text-transform: uppercase;
+}
+
+.historia .div {
+    background-color: #00000009;
+    overflow: hidden;
+    width: 100%;
+    height: 3230px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.historia .overlap {
+    position: absolute;
+    width: 100%;
+    height: 2150px;
+    top: 1080px;
+    left: 0;
+    background-color: #870ad6;
+    display: flex;
+    align-items: center;
+}
+
+
+.historia .globalizao-e-fuso {
+    position: absolute;
+    width: 722px;
+    height: 350px;
+    top: 1749px;
+    left: 156px;
+    transition: 0.8s;
+}
+
+.globalizao-e-fuso:hover {
+    transform: scale(1.1);
+    box-shadow: 2px #000000;
+    transition: 0.8s;
+}
+
+.historia .overlap-grupo {
+    position: relative;
+    height: 352px;
+    top: -1px;
+    left: -1px;
+    border-radius: 50px;
+    border: 1px dashed;
+    border-color: #000000;
+}
+
+.historia .div-2 {
+    position: absolute;
+    width: 450px;
+    height: 280px;
+    top: 28px;
+    left: 254px;
+    background-color: #00000009;
+    border-radius: 60px;
+    border: 1px solid;
+    border-color: #000000;
+    box-shadow: 0px 20px 0px #000000;
+}
+
+.historia .globalizacaoTexto {
+    top: 41px;
+    left: 38px;
+    position: absolute;
+    width: 372px;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: justify;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.historia .globalizao {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: 85px;
+    left: 34px;
+}
+
+.historia .tecnolgicos {
+    position: absolute;
+    width: 722px;
+    height: 350px;
+    top: 1468px;
+    left: 1046px;
+    transition: 0.8s;
+}
+
+.tecnolgicos:hover {
+    transform: scale(1.1);
+    transition: 0.8s;
+}
+
+.historia .Box {
+    position: absolute;
+    width: 450px;
+    height: 280px;
+    top: 28px;
+    left: 20px;
+    background-color: #00000009;
+    border-radius: 60px;
+    border: 2px solid;
+    border-color: #000000;
+    box-shadow: 0px 20px 0px #000000;
+}
+
+
+.historia .texto {
+    position: absolute;
+    width: 372px;
+    top: 40px;
+    left: 37px;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: justify;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.historia .futuroImg {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: 85px;
+    left: 499px;
+}
+
+.historia .notao-e-escrita {
+    position: absolute;
+    width: 722px;
+    height: 350px;
+    top: 1189px;
+    left: 156px;
+    transition: 0.8s;
+}
+
+.notao-e-escrita:hover {
+    transform: scale(1.1);
+    transition: 0.8s;
+}
+
+.historia .overlap-grupo2 {
+    position: relative;
+    height: 352px;
+    top: -1px;
+    left: -1px;
+    border-radius: 50px;
+}
+
+.historia .cultura {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: 78px;
+    left: 35px;
+}
+
+
+.historia .pontilhada {
+    position: absolute;
+    width: 722px;
+    height: 352px;
+    top: 0;
+    left: 0;
+    border-radius: 50px;
+    border: 1px dashed;
+    border-color: #000000;
+}
+
+.historia .p {
+    top: 70px;
+    left: 293px;
+    position: absolute;
+    width: 372px;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: justify;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.historia .influncias-culturais {
+    position: absolute;
+    width: 722px;
+    height: 350px;
+    top: 889px;
+    left: 1046px;
+    transition: 0.8s;
+}
+
+.influncias-culturais:hover {
+    transform: scale(1.1);
+    transition: 0.8s;
+}
+
+.historia .culturais {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: 82px;
+    left: 499px;
+    overflow: hidden;
+    transition: 0.8s;
+}
+
+
+.historia .artboard {
+    width: 181px;
+    height: 180px;
+}
+
+
+.historia .culturaisimg {
+    position: absolute;
+    width: 179px;
+    height: 180px;
+    top: 0;
+    left: 1px;
+}
+
+.historia .instrumento {
+    position: absolute;
+    width: 722px;
+    height: 350px;
+    top: 606px;
+    left: 156px;
+    transition: 0.8s;
+}
+
+.instrumento:hover {
+    transform: scale(1.1);
+    transition: 0.8s;
+}
+
+.historia .intrumentos {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: 81px;
+    left: 34px;
+}
+
+.historia .instrumento-box {
+    position: absolute;
+    width: 450px;
+    height: 280px;
+    top: 32px;
+    left: 254px;
+    background-color: #00000009;
+    border-radius: 60px;
+    border: 1px solid;
+    border-color: #000000;
+    box-shadow: 0px 20px 0px #000000;
+}
+
+
+.historia .rythm {
+    position: absolute;
+    width: 722px;
+    height: 350px;
+    top: 316px;
+    left: 1046px;
+    transition: 0.8s;
+}
+
+.rythm:hover {
+    transform: scale(1.1);
+    transition: 0.8s;
+}
+
+.historia .rythm-borda {
+    position: absolute;
+    width: 450px;
+    height: 280px;
+    top: 22px;
+    left: 20px;
+    background-color: #00000009;
+    border-radius: 60px;
+    border: 2px solid;
+    border-color: #000000;
+    box-shadow: 0px 20px 0px #000000;
+}
+
+.historia .african {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: 72px;
+    left: 505px;
+}
+
+.historia .rythm-texto {
+    position: absolute;
+    width: 372px;
+    top: 40px;
+    left: 37px;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: justify;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.historia .vocal {
+    position: absolute;
+    width: 722px;
+    height: 350px;
+    top: 55px;
+    left: 156px;
+    transition: 0.8s;
+}
+
+.vocal:hover {
+    transform: scale(1.1);
+    transition: 0.8s;
+}
+
+
+.historia .boca-borda {
+    position: absolute;
+    width: 450px;
+    height: 280px;
+    top: 20px;
+    left: 254px;
+    background-color: #00000009;
+    border-radius: 60px;
+    border: 1px solid;
+    border-color: #000000;
+    box-shadow: 0px 20px 0px #000000;
+}
+
+.historia .rythm-borda {
+    position: absolute;
+    width: 450px;
+    height: 280px;
+    top: 20px;
+    right: 254px;
+    background-color: #00000009;
+    border-radius: 60px;
+    border: 1px solid;
+    border-color: #000000;
+    box-shadow: 0px 20px 0px #000000;
+}
+
+.historia .img {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: 72px;
+    left: 33px;
+}
+
+
+.overlap-grupo {
+    background-color: rgb(235, 91, 30, 0.1);
+}
+
+.timelapse {
+    background-color: #000;
+}
+
+button {
+    background: transparent;
+    border: none;
+}
+
+.mav-logo img {
+    width: 80px;
+    height: 80px;
+}

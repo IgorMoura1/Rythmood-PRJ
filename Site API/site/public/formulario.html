@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Rythmood</title>
+    <link rel="stylesheet" href="css/formulario.css">
+</head>
+
+<body>
+    <label>
+        <div class="contact-us">
+            <div class="botoes">
+                <button type="button"> <a href="index.html">Voltar ao início</a></button>
+                <button type="button"> <a href="login.html">Logar</a></button>
+            </div>
+            <div class="formulario">
+                <div class="box">
+                    <div class="feeling">
+                        Como você está se sentindo agora?
+                        <select id="feeling" required>
+                            <option value=""></option>
+                            <option value="Feliz">Feliz</option>
+                            <option value="Triste">Triste</option>
+                            <option value="Alegre">Alegre</option>
+                            <option value="Raiva">Raiva</option>
+                            <option value="Neutro">Neutro</option>
+                        </select>
+                    </div>
+                    <div class="genero">
+                        Qual o genêro que você mais ouve?
+                        <select id="genero" required>
+                            <option value=""></option>
+                            <option value="Dance/eletrônica">Dance/eletrônica</option>
+                            <option value="Rock">Rock</option>
+                            <option value="Jazz">Jazz</option>
+                            <option value="R&B">Rhythm and Blues (R&B)</option>
+                            <option value="Pop">Pop</option>
+                            <option value="Rap">Hip-hop/Rap</option>
+                            <option value="Funk">Funk</option>
+                            <option value="Pagode">Pagode</option>
+                            <option value="Sertanejo">Sertanejo</option>
+                            <option value="MPB">MPB</option>
+                        </select>
+                    </div>
+                    <div class="descoberta">
+                        Como você descobre músicas novas?
+                        <select id="descoberta" required>
+                            <option value=""></option>
+                            <option value="Streaming">App de Streming</option>
+                            <option value="Sociais">App Redes Sociais</option>
+                            <option value="Amigos">Recomendação de Amigos</option>
+                            <option value="Propria">Por Conta Propria</option>
+                            <option value="Radio">Radio</option>
+                        </select>
+                    </div>
+                    <div class="nacionalidade">
+                        Você ouve mais música internacional ou nacional?
+                        <select id="nascMusica" required>
+                            <option value=""></option>
+                            <option value="Internacional">Internacional</option>
+                            <option value="Nacional">Nacional</option>
+                        </select>
+                    </div>
+                    <div class="mscImportante">
+                        O que é mais importante para você em uma música?
+                        <select id="musicaImportante" required>
+                            <option value=""></option>
+                            <option value="Letras">Letras</option>
+                            <option value="Melodia">Melodia</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button onclick="enviarForm()" type="button">Enviar!</button>
+        </div>
+    </label>
+</body>
+<script src="formulario.js"></script>
+
+</html>
