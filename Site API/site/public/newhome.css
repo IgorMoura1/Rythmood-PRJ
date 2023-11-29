@@ -19,30 +19,21 @@ body {
     justify-content: space-between;
     padding: 2em 1em 2em 2em;
     font-family: "Poppins", sans-serif;
-
 }
-
-.nav > * {
-    position: relative;
-    animation: fade-down 1s ease-in-out;
-}
-
-
 
 .nav a {
-    position: relative;
     text-decoration: none;
     text-transform: uppercase;
     color: #000;
     padding: 0 1em;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 300;
 }
 
-.nav a:hover {
-    transform: scale(2);
+.nav-links span:hover {
+    transform: scale(1.9);
+    color: #eb5b1e;
 }
-
 
 @keyframes fade-up {
     0% {
@@ -90,10 +81,6 @@ body {
     }
 }
 
-.nav-links a:hover {
-    transform: scale(1.2);
-    cursor: pointer;
-}
 
 .header {
     width: 100%;
@@ -135,7 +122,15 @@ body {
 }
 
 .header-right.col {
-    padding-top: 100px;
+    padding-top: 50px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.header-left.col {
+    padding-bottom: 100px;
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -256,11 +251,11 @@ body {
 
 .copy p {
     font-family: "Poppins", sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 2;
     text-align: justify;
-    padding-top: 50px;
+    padding-top: 25px;
 }
 
 .btn-container {
@@ -287,15 +282,18 @@ body {
     position: relative;
     width: 95%;
     height: 50vh;
-    border-radius: 40px 40px 0 0;
+    border-radius: 40px 40px 40px 40px;
     margin: 2em auto;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
+    overflow: hidden;
 }
 
 .hero img {
     width: 100%;
+    height: auto;
+    top: 100px;
 }
 
 .hero-wrapper {
@@ -312,15 +310,16 @@ body {
     border: 4px solid rgb(45, 45, 45);
     border-radius: 100%;
     background: #000;
-    top: -1.4em;
-    right: 4em;
+    top: 13em;
+    right: 6em;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 40px;
     color: #eb5b1e;
     font-family: "poppins", sans-serif;
-    transform: rotate(-45deg);
+    transform: rotate(-90deg);
+    z-index: 100;
 }
 
 .marquee {
@@ -427,29 +426,16 @@ body {
 .historia {
     position: absolute;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     width: 100%;
     font-family: "poppins", sans-serif;
     text-transform: uppercase;
 }
 
-.historia .div {
-    background-color: #00000009;
-    overflow: hidden;
-    width: 100%;
-    height: 3230px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .historia .overlap {
     position: absolute;
     width: 100%;
-    height: 2150px;
-    top: 1080px;
+    height: auto;
     left: 0;
     background-color: #870ad6;
     display: flex;
@@ -645,11 +631,6 @@ body {
 }
 
 
-.historia .artboard {
-    width: 181px;
-    height: 180px;
-}
-
 
 .historia .culturaisimg {
     position: absolute;
@@ -659,14 +640,9 @@ body {
     left: 1px;
 }
 
-.historia .instrumento {
-    position: absolute;
-    width: 722px;
-    height: 350px;
-    top: 606px;
-    left: 156px;
-    transition: 0.8s;
-}
+
+
+/* ---------------------------------------Terceiro Bloco-------------------------------------------- */
 
 .instrumento:hover {
     transform: scale(1.1);
@@ -694,19 +670,49 @@ body {
     box-shadow: 0px 20px 0px #000000;
 }
 
+/* ==========================posição do terceiro bloco================================= */
 
-.historia .rythm {
+.historia .instrumento {
     position: absolute;
     width: 722px;
     height: 350px;
-    top: 316px;
-    left: 1046px;
+    top: 606px;
+    left: 156px;
     transition: 0.8s;
 }
 
-.rythm:hover {
-    transform: scale(1.1);
-    transition: 0.8s;
+/* ==========================posição do terceiro bloco================================= */
+
+/* ---------------------------------------Terceiro Bloco-------------------------------------------- */
+
+
+
+
+
+
+
+
+/* ---------------------------------------Segundo Bloco-------------------------------------------- */
+
+.historia .rythm-texto {
+    position: absolute;
+    width: 372px;
+    top: 40px;
+    left: 37px;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: justify;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+.historia .african {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: 72px;
+    left: 505px;
 }
 
 .historia .rythm-borda {
@@ -722,41 +728,46 @@ body {
     box-shadow: 0px 20px 0px #000000;
 }
 
-.historia .african {
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    top: 72px;
-    left: 505px;
-}
-
-.historia .rythm-texto {
-    position: absolute;
-    width: 372px;
-    top: 40px;
-    left: 37px;
-    font-weight: 400;
-    color: #ffffff;
-    font-size: 20px;
-    text-align: justify;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-.historia .vocal {
-    position: absolute;
-    width: 722px;
-    height: 350px;
-    top: 55px;
-    left: 156px;
-    transition: 0.8s;
-}
-
-.vocal:hover {
+.rythm:hover {
     transform: scale(1.1);
     transition: 0.8s;
 }
 
+/* ====================================Posição do Segundo Bloco====================================== */
+
+.historia .rythm {
+    position: absolute;
+    width: 722px;
+    height: 350px;
+    top: 316px;
+    left: 1046px;
+    transition: 0.8s;
+}
+
+/* ====================================Posição do Segundo Bloco====================================== */
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------Segundo Bloco------------------------------------------- */
+
+
+
+/* ---------------------------------------------Primeiro Bloco----------------------------------------- */
+
+.historia .img {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: 72px;
+    left: 33px;
+}
 
 .historia .boca-borda {
     position: absolute;
@@ -771,35 +782,25 @@ body {
     box-shadow: 0px 20px 0px #000000;
 }
 
-.historia .rythm-borda {
-    position: absolute;
-    width: 450px;
-    height: 280px;
-    top: 20px;
-    right: 254px;
-    background-color: #00000009;
-    border-radius: 60px;
-    border: 1px solid;
-    border-color: #000000;
-    box-shadow: 0px 20px 0px #000000;
+.vocal:hover {
+    transform: scale(1.1);
+    transition: 0.8s;
 }
 
-.historia .img {
+.historia .vocal {
     position: absolute;
-    width: 180px;
-    height: 180px;
-    top: 72px;
-    left: 33px;
+    width: 722px;
+    height: 350px;
+    top: 55px;
+    left: 156px;
+    transition: 0.8s;
 }
-
+/* ------------------------------------Primeiro Bloco------------------------------ */
 
 .overlap-grupo {
     background-color: rgb(235, 91, 30, 0.1);
 }
 
-.timelapse {
-    background-color: #000;
-}
 
 button {
     background: transparent;
@@ -807,6 +808,13 @@ button {
 }
 
 .mav-logo img {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
+}
+
+.timelapse {
+    background-color: #0000004d;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }

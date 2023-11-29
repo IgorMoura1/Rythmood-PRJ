@@ -4,47 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulário Rythmood</title>
+    <link rel="stylesheet" href="css/goDJ.css">
 </head>
 
 <body>
+    <label>
+        <div class="contact-usGame">
+            <div class="botoes">
+                <button type="button"> <a href="index.html">QUIZ GAME!</a></button>
+            </div>
+            <span>QUIZ GAME!</span>
+            <div class="formulario">
+                <div class="box">
+                </div>
+                <button onclick="enviarForm()" type="button">Selecionar!</button>
+            </div>
+        </div>
+        <div class="contact-usForm">
+            <div class="botoes">
+                <button type="button"> <a href="index.html">FORMULÁRIO!</a></button>
 
+            </div>
+            <span>FORMULÁRIO!</span>
+            <div class="formulario">
+                <div class="box">
+                </div>
+                <button onclick="enviarForm()" type="button">Selecionar!</button>
+            </div>
+        </div>
+    </label>
 </body>
+<script src="formulario.js"></script>
 
 </html>
-
-<script>
-const APIController = (function() {
-    const cliendId = '8c26a667b19946f2bcbd5509c094c6b8';
-    const clientSecret = '49ce85a51eb343688ad69716020ed12f'
-    // Authorization token that must have been created previously. See : https://developer.spotify.com/documentation/web-api/concepts/authorization
-    const token = 'BQCy-oE9v9D34oHU6HBIn81pFWjx3CtmXi96267dXFrZx54T5MALDXkCmpNK5Wsv7V9B4AzT_lJv2jIZBTnhRBzh4ZPAUsYIXeJ5hgVnWIslt6xjwlVBInbVN40bCSwXaBz_mg0Cc-Tj1mbUGrQMwpEeRW7PIiQCdatsn0R9Oz5KTt-MAwv4uWrzTIisDLs85KxiCZeQkrqo6xsg1D1k96tu7dACl9t4A1jYEkoYy7pDzxXR9cf2PcAv_jkOmmlJPxc3D4o';
-    )}
-    async function fetchWebApi(endpoint, method, body) {
-        const res = await fetch(`https://api.spotify.com/${endpoint}`, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-            method,
-            body: JSON.stringify(body)
-        });
-        return await res.json();
-    }
-    
-    async function getTopTracks() {
-        // Endpoint reference : https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks
-        return (await fetchWebApi(
-            'v1/me/top/tracks?time_range=short_term&limit=5', 'GET'
-        )).items;
-    }
-
-    const topTracks = await getTopTracks();
-    console.log(
-        topTracks?.map(
-            ({ name, artists }) =>
-                `${name} by ${artists.map(artist => artist.name).join(', ')}`
-        )
-    );
-
-
-</script>

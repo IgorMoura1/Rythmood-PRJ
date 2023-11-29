@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background: url("Matrix.webp") center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    font-family: "Fjalla One";
+}
+
+.contact-usGame {
+    background: #870ad6;
+    padding: 50px 100px;
+    border: 2px solid black;
+    box-shadow: 15px 15px 1px #cea5f5, 15px 15px 1px 2px black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50vh;
+    background-image: url("assets/musicQuizBackground.svg");
+}
+
+.contact-usForm {
+    background: #870ad6;
+    background-image: url();
+    padding: 50px 100px;
+    border: 2px solid black;
+    box-shadow: 15px 15px 1px #cea5f5, 15px 15px 1px 2px black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 50vh;
+}
+
+
+input {
+    display: block;
+    width: 100%;
+    font-size: 14pt;
+    line-height: 28pt;
+    font-family: "Fjalla One";
+    margin-bottom: 28pt;
+    border: none;
+    border-bottom: 5px solid black;
+    background: #f8f4e5;
+    min-width: 250px;
+    padding-left: 5px;
+    outline: none;
+    color: black;
+}
+
+input:focus {
+    border-bottom: 5px solid #eb5b1e;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    line-height: 28pt;
+    padding: 0 20px;
+    background: #ffffff;
+    letter-spacing: 2px;
+    transition: 0.2s all ease-in-out;
+    outline: none;
+    border: 1px solid black;
+    box-shadow: 3px 3px 1px 1px #624185, 3px 3px 1px 2px black;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+label {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
