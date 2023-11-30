@@ -18,7 +18,7 @@
             <div class="formulario">
                 <div class="box">
                 </div>
-                <button onclick="enviarForm()" type="button">Selecionar!</button>
+                <button onclick="selecionarGame()" type="button">Selecionar!</button>
             </div>
         </div>
         <div class="contact-usForm">
@@ -30,11 +30,27 @@
             <div class="formulario">
                 <div class="box">
                 </div>
-                <button onclick="enviarForm()" type="button">Selecionar!</button>
+                <button onclick="selecionarForm()" type="button">Selecionar!</button>
             </div>
         </div>
     </label>
 </body>
-<script src="formulario.js"></script>
+<script>
+    function selecionarGame() {
+        if (sessionStorage.ID_USUARIO.length == 0) {
+            alert(`Você não está logado, por favor faça login!`)
+        } else {
+            window.location = "game.html"
+        }
+    }
+    function selecionarForm() {
+        if (sessionStorage.ID_USUARIO.length == 0) {
+            alert(`Você não está logado, por favor faça login!`)
+        } else {
+            window.location = "formulario.html"
+        }
+    }
+
+</script>
 
 </html>

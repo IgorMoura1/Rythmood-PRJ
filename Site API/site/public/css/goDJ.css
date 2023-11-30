@@ -27,7 +27,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     height: 50vh;
-    background-image: url("assets/musicQuizBackground.svg");
+    align-items: center;
 }
 
 .contact-usForm {
@@ -41,6 +41,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     height: 50vh;
+    align-items: center;
 }
 
 
@@ -86,3 +87,8 @@ label {
     justify-content: space-evenly;
     align-items: center;
 }
+
+.contact-usGame {
+    align-items: center;
+}
+
