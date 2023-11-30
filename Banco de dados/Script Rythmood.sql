@@ -42,9 +42,12 @@ select * from formulario;
 
 -- select para jogar no ranking na dashboard --
 select score, nome from ranking join usuario on id = fkUsuario order by score desc;
+-- select full acima
 
 -- select para jogar no ranking na dashboard --
 select score as Pontuação, nome as Nome from ranking join usuario on fkUsuario = id order by score desc limit 5;
+
+select score from ranking order by score desc;
 
 
 -- select para jogar no gráfico dashboard
