@@ -930,6 +930,10 @@ button {
     text-transform: uppercase;
 }
 
+.footer .fa-brands {
+    font-size: 50px;
+}
+
 .social ul li {
     display: inline-block;
     padding-right: 5px !important;
