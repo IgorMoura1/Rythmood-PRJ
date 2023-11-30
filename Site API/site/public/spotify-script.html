@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spotify</title>
+</head>
+
+<body onload="getData()">
+    <div class="pickerPlaylist">
+        <div class="menuPlaylist">
+            
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    const clientId = '8c26a667b19946f2bcbd5509c094c6b8'; // CLIENT ID AQUI
+    const clientSecret = '49ce85a51eb343688ad69716020ed12f'; // CLIENT SECRET AQUI
+    const tokenEndpoint = 'https://accounts.spotify.com/api/token'; // NÃO MEXA
+
+    let accessToken = 'BQDfgIwzaHiXOIgoW38acQvwZc-7dTv5sT6BHD4M20e3Gj9hRZHJi3dRIAmSpqfSgIVyupnxJuFD1EAjozji94ve4_9Nd91pgn-U3-mOGaXc8Ie9-qQ'; // ESTA VARIAVEL SE TRONARÁ O TOKENACESS, O TOKEN É PEGO DEPOIS DE GERAR NO PRÓPRIO HTML
+
+
+    // DADOS DA REQUISIÇÃO DO TOKEN ACESS, NÃO ALTERAR
+    const data = new URLSearchParams();
+    data.append('grant_type', 'client_credentials');
+    data.append('client_id', clientId);
+    data.append('client_secret', clientSecret);
+
+
+    //FETCH COMPLETO DA REQUISIÇÃO, JÁ PRONTO
+    fetch(tokenEndpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: data
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Token de acesso:', data.access_token);
+            accessToken = data.access_token;
+            // Faça algo com o token de acesso retornado
+        })
+        .catch(error => {
+            console.error('Ocorreu um erro:', error);
+        });
+
+
+    // ------------------------------------------------------------------------------------------------------------
+
+    /*ESSA FUNÇÃO VAI BUSCAR DADOS DE TESTE PRA VC, ELA N É OBRIGATÓRIA*/
+    // function getData() {
+    //     // Substitua 'SEU_TOKEN_DE_ACESSO' pelo seu token de acesso válido do Spotify
+
+    //     // ID de um artista no Spotify (por exemplo, "Coldplay")
+    //     const artistId = '2YZyLoL8N0Wb9xBt1NhZWg'; // ID do Coldplay como exemplo
+
+    //     // URL da API do Spotify para obter informações sobre um artista específico
+    //     const url = `https://api.spotify.com/v1/artists/${artistId}`;
+
+    //     // Cabeçalhos para autenticar a solicitação com o token de acesso
+    //     const headers = {
+    //         'Authorization': `Bearer ${accessToken}`
+    //     };
+
+    //     // Fazendo a solicitação GET para obter informações sobre o artista
+    //     fetch(url, {
+    //         method: 'GET',
+    //         headers: { 'Authorization': `Bearer ${accessToken}` }
+    //     })
+    //         .then(response => {
+    //             if (response.ok) {
+    //                 return response.json();
+    //             }
+    //             throw new Error('Erro ao obter informações do artista');
+    //         })
+    //         .then(data => {
+    //             // Exibindo as informações do artista no console
+    //             console.log(`Nome do artista: ${data.name}`);
+    //             console.log(`Gêneros: ${data.genres.join(', ')}`);
+    //             console.log(`Popularidade: ${data.popularity}`);
+    //             console.log(data);
+    //         })
+    //         .catch(error => {
+    //             console.error('Houve um erro:', error);
+    //         });
+
+    // }
+
+    function getData() {
+        // Substitua 'SEU_TOKEN_DE_ACESSO' pelo seu token de acesso válido do Spotify
+
+        var listaPlaylist = [
+            {
+                nome: 'Dance/Eletrônica',
+                urlPlaylist: '1B0gi0vKn93PkMjCKAQGiv'
+            },
+            {
+                nome: 'Rock',
+                urlPlaylist: '37i9dQZF1EQpj7X7UK8OOF'
+            },
+            {
+                nome: 'Jazz',
+                urlPlaylist: '37i9dQZF1EQqA6klNdJvwx'
+            },
+            {
+                nome: 'R&B',
+                urlPlaylist: '37i9dQZF1EQoqCH7BwIYb7'
+            },
+            {
+                nome: 'POP',
+                urlPlaylist: '37i9dQZF1EQncLwOalG3K7'
+            },
+            {
+                nome: 'Hip-Hop/Rap',
+                urlPlaylist: '37i9dQZF1EQnqst5TRi17F'
+            },
+            {
+                nome: 'Funk',
+                urlPlaylist: '37i9dQZF1DWTkIwO2HDifB'
+            },
+            {
+                nome: 'Pagode',
+                urlPlaylist: '37i9dQZF1EIeBNlvSNGEiZ'
+            },
+            {
+                nome: 'Sertanejo',
+                urlPlaylist: '37i9dQZF1EIcYIp2gV4A46'
+            },
+            {
+                nome: 'MPB',
+                urlPlaylist: '5Jyi6j1OGPi6epzpL360gO'
+            }
+        ]
+
+        // ID de um artista no Spotify (por exemplo, "Coldplay")
+        const playlistId = '37i9dQZF1EQncLwOalG3K7'; // ID do Coldplay como exemplo
+
+        // URL da API do Spotify para obter informações sobre um artista específico
+        const url = `https://api.spotify.com/v1/playlists/${playlistId}`;
+
+        // Cabeçalhos para autenticar a solicitação com o token de acesso
+        const headers = {
+            'Authorization': `Bearer ${accessToken}`
+        };
+
+        // Fazendo a solicitação GET para obter informações sobre o artista
+        fetch(url, {
+            method: 'GET',
+            headers: { 'Authorization': `Bearer ${accessToken}` }
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Erro ao obter informações do artista');
+            })
+            .then(data => {
+                // Exibindo as informações do artista no console
+                console.log(`Nome do artista: ${data.name}`);
+                console.log(`Gêneros: ${data.genres}`);
+                console.log(`Popularidade: ${data.popularity}`);
+                console.log(`Link da Playlist: ${data.external_urls.spotify}`);
+                console.log(`Músicas: ${data.tracks.items}`);
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Houve um erro:', error);
+            });
+
+    }
+
+
+//* ESSA FUNÇÃO VAI BUSCAR AS 5 TRACKS MAIS OUVIDAS DO USUÁRIO*//
+
+
+</script>

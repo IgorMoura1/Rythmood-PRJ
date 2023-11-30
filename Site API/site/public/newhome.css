@@ -13,6 +13,9 @@ body {
     background: #870ad6;
 }
 
+body {
+    overflow-x: hidden;
+}
 .nav {
     width: 100%;
     display: flex;
@@ -164,7 +167,8 @@ body {
     border-radius: 64px;
 }
 
-.control,#current {
+.control,
+#current {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -213,7 +217,7 @@ body {
 
 #progress {
     display: blcok;
-    width: var(--progress,0%);
+    width: var(--progress, 0%);
     background-color: white;
     transition: all 1s linear;
     height: 100%;
@@ -424,33 +428,48 @@ body {
 /* ------------------------------------------- antiga home --------------------------------------------- */
 
 .historia {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    width: 100vw;
+    height: auto;
     font-family: "poppins", sans-serif;
     text-transform: uppercase;
-}
-
-.historia .overlap {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    left: 0;
-    background-color: #870ad6;
-    display: flex;
     align-items: center;
 }
 
+.columns {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    height: auto;
+    align-items: center;
+}
 
+.colunaEsquerda {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 200px;
+}
+
+.colunaDireita {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 200px;
+}
+
+
+/* ------------------------- Setimo Bloco -------------------------------------- */
+
+/* ==========================Setimo do Quinto bloco================================= */
 .historia .globalizao-e-fuso {
-    position: absolute;
     width: 722px;
     height: 350px;
-    top: 1749px;
-    left: 156px;
     transition: 0.8s;
+    transform: scale(0.9);
 }
+
+/* ==========================Setimo do Quinto bloco================================= */
 
 .globalizao-e-fuso:hover {
     transform: scale(1.1);
@@ -502,14 +521,27 @@ body {
     left: 34px;
 }
 
+/* ------------------------- Setimo Bloco -------------------------------------- */
+
+
+
+
+
+
+
+
+/* ------------------------- Sexto Bloco -------------------------------------- */
+
+/* ==========================Posição do Sexto bloco================================= */
+
 .historia .tecnolgicos {
-    position: absolute;
     width: 722px;
     height: 350px;
-    top: 1468px;
-    left: 1046px;
     transition: 0.8s;
+    transform: scale(0.9);
 }
+
+/* ==========================Posição do Sexto bloco================================= */
 
 .tecnolgicos:hover {
     transform: scale(1.1);
@@ -551,26 +583,33 @@ body {
     left: 499px;
 }
 
+
+
+
+
+
+/* ------------------------- Sexto Bloco -------------------------------------- */
+
+
+
+
+
+
+/* ==========================Posição do Quinto bloco================================= */
+
 .historia .notao-e-escrita {
-    position: absolute;
     width: 722px;
     height: 350px;
-    top: 1189px;
-    left: 156px;
     transition: 0.8s;
+    transform: scale(0.9);
 }
+
+/* ==========================Posição do Quinto bloco================================= */
+
 
 .notao-e-escrita:hover {
     transform: scale(1.1);
     transition: 0.8s;
-}
-
-.historia .overlap-grupo2 {
-    position: relative;
-    height: 352px;
-    top: -1px;
-    left: -1px;
-    border-radius: 50px;
 }
 
 .historia .cultura {
@@ -581,17 +620,6 @@ body {
     left: 35px;
 }
 
-
-.historia .pontilhada {
-    position: absolute;
-    width: 722px;
-    height: 352px;
-    top: 0;
-    left: 0;
-    border-radius: 50px;
-    border: 1px dashed;
-    border-color: #000000;
-}
 
 .historia .p {
     top: 70px;
@@ -606,14 +634,24 @@ body {
     line-height: normal;
 }
 
+/* ------------------------- Quinto Bloco -------------------------------------- */
+
+
+
+
+
+/* ------------------------- Quarto bloco -------------------------------------- */
+
+
+/* ==========================Posição do Quarto bloco================================= */
 .historia .influncias-culturais {
-    position: absolute;
     width: 722px;
     height: 350px;
-    top: 889px;
-    left: 1046px;
     transition: 0.8s;
+    transform: scale(0.9);
 }
+
+/* ==========================Posição do Quarto bloco================================= */
 
 .influncias-culturais:hover {
     transform: scale(1.1);
@@ -640,14 +678,12 @@ body {
     left: 1px;
 }
 
+/* ------------------------- Quarto bloco -------------------------------------- */
 
 
 /* ---------------------------------------Terceiro Bloco-------------------------------------------- */
 
-.instrumento:hover {
-    transform: scale(1.1);
-    transition: 0.8s;
-}
+
 
 .historia .intrumentos {
     position: absolute;
@@ -673,11 +709,14 @@ body {
 /* ==========================posição do terceiro bloco================================= */
 
 .historia .instrumento {
-    position: absolute;
     width: 722px;
     height: 350px;
-    top: 606px;
-    left: 156px;
+    transition: 0.8s;
+    transform: scale(0.9);
+}
+
+.instrumento:hover {
+    transform: scale(1.1);
     transition: 0.8s;
 }
 
@@ -728,28 +767,24 @@ body {
     box-shadow: 0px 20px 0px #000000;
 }
 
-.rythm:hover {
-    transform: scale(1.1);
-    transition: 0.8s;
-}
+
 
 /* ====================================Posição do Segundo Bloco====================================== */
 
 .historia .rythm {
-    position: absolute;
     width: 722px;
     height: 350px;
-    top: 316px;
-    left: 1046px;
     transition: 0.8s;
+    transform: scale(0.9);
 }
 
 /* ====================================Posição do Segundo Bloco====================================== */
 
 
-
-
-
+.rythm:hover {
+    transform: scale(1.1);
+    transition: 0.8s;
+}
 
 
 
@@ -760,6 +795,9 @@ body {
 
 
 /* ---------------------------------------------Primeiro Bloco----------------------------------------- */
+
+
+
 
 .historia .img {
     position: absolute;
@@ -782,19 +820,20 @@ body {
     box-shadow: 0px 20px 0px #000000;
 }
 
+
+
+.historia .vocal {
+    width: 722px;
+    height: 350px;
+    transition: 0.8s;
+    transform: scale(0.9);
+}
+
 .vocal:hover {
     transform: scale(1.1);
     transition: 0.8s;
 }
 
-.historia .vocal {
-    position: absolute;
-    width: 722px;
-    height: 350px;
-    top: 55px;
-    left: 156px;
-    transition: 0.8s;
-}
 /* ------------------------------------Primeiro Bloco------------------------------ */
 
 .overlap-grupo {
@@ -817,4 +856,144 @@ button {
     align-items: center;
     display: flex;
     justify-content: center;
+}
+
+
+
+
+
+
+
+/* ========================================== F O O T E R ============================================= */
+
+
+
+
+
+
+.dummy_page {
+    height: 200px;
+    width: 100%;
+    background-color: #870ad6;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 60px 0px;
+}
+
+/* STYLES SPECIFIC TO FOOTER  */
+.footer {
+    width: 100%;
+    position: relative;
+    height: auto;
+    background-color: #eb5b1e;
+}
+
+.footer .col {
+    width: 190px;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0px 20px 20px 20px;
+}
+
+.footer .col h1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+    padding: 20px 0px 5px 0px;
+    color: #141414;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.250em;
+}
+
+.footer .col ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer .col ul li {
+    color: #1f0330;
+    font-size: 14px;
+    font-family: 'poppins', sans-serif;
+    font-weight: 500;
+    padding: 5px 0px 5px 0px;
+    cursor: pointer;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    text-transform: uppercase;
+}
+
+.social ul li {
+    display: inline-block;
+    padding-right: 5px !important;
+}
+
+.footer .col ul li:hover {
+    color: #ffffff;
+    transition: .1s;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
+}
+
+.clearfix {
+    clear: both;
+}
+
+@media only screen and (min-width: 1280px) {
+    .contain {
+        width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 1139px) {
+    .contain .social {
+        width: 1000px;
+        display: block;
+    }
+
+    .social h1 {
+        margin: 0px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .footer .col {
+        width: 33%;
+    }
+
+    .footer .col h1 {
+        font-size: 14px;
+    }
+
+    .footer .col ul li {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .footer .col {
+        width: 50%;
+    }
+
+    .footer .col h1 {
+        font-size: 14px;
+    }
+
+    .footer .col ul li {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .footer .col {
+        width: 100%;
+    }
 }
