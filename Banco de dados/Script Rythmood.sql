@@ -40,10 +40,8 @@ select * from formulario;
 
 
 
-
-
-ALTER TABLE formulario ADD CONSTRAINT unico UNIQUE (fkUsuario);
-
+-- select para jogar no ranking na dashboard --
+select score, nome from ranking join usuario on id = fkUsuario order by score desc;
 
 -- select para jogar no ranking na dashboard --
 select score as Pontuação, nome as Nome from ranking join usuario on fkUsuario = id order by score desc limit 5;
@@ -53,7 +51,13 @@ select score as Pontuação, nome as Nome from ranking join usuario on fkUsuario
 select score as pontuacao, count(score) as qtdPessoasQueAcertaram from ranking group by score order by score;
 
 -- select para mostrar qual opção do banco de dados foi mais selecionado
+select humor, count(humor) from formulario group by humor limit 1;
 select genero, count(genero) from formulario group by genero limit 1;
+select descoberta, count(descoberta) from formulario group by descoberta limit 1;
+select nacionalidade, count(nacionalidade) from formulario group by nacionalidade limit 1;
+select mscImportante, count(mscImportante) from formulario group by mscImportante limit 1;
+
+
 
 
 

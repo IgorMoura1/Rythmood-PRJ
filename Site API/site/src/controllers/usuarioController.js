@@ -5,6 +5,8 @@ function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
 
+
+    
     if (email == undefined) {
         res.status(400).send("Seu email está indefinido");
     } else if (senha == undefined) {
@@ -24,6 +26,7 @@ function autenticar(req, res) {
                                 email: resultadoAutenticar[0].email
                             })
                     } else if (resultadoAutenticar.length == 0) {
+                        
                         res.status(403).send("Email e/ou senha inválido(s)");
                     } else {
                         res.status(403).send("Mais de um usuário com o mesmo login e senha!");
@@ -76,5 +79,5 @@ function cadastrar(req, res) {
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
 }
