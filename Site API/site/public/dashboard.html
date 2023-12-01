@@ -68,29 +68,29 @@
                         </div>
                         <div class="widgetRanking">
                             <div class="primeiroLugar">
-                                <span id="primeiroColocado">1º</span>
-                                <span id="primeiroColocadoNome">Jean</span>
-                                <span id="primeiroColocadoPontuação">10 Pontos</span>
+                                <span id="RankingprimeiroColocado">1º</span>
+                                <span id="RankingprimeiroColocadoNome"></span>
+                                <span id="RankingprimeiroColocadoPontuação"></span>
                             </div>
                             <div class="segundoLugar">
-                                <span id="segundoColocado">2º</span>
-                                <span id="segundoColocadoNome">Maria</span>
-                                <span id="segundoColocadoPontuação">9 Pontos</span>
+                                <span id="RankingsegundoColocado">2º</span>
+                                <span id="RankingsegundoColocadoNome"></span>
+                                <span id="RankingsegundoColocadoPontuação"></span>
                             </div>
                             <div class="terceiroLugar">
-                                <span id="terceiroColocado">3º</span>
-                                <span id="terceiroColocadoNome">Enzo</span>
-                                <span id="terceiroColocadoPontuação">8 Pontos</span>
+                                <span id="RankingterceiroColocado">3º</span>
+                                <span id="RankingterceiroColocadoNome"></span>
+                                <span id="RankingterceiroColocadoPontuação"></span>
                             </div>
                             <div class="quartoLugar">
-                                <span id="quartoColocado">4º</span>
-                                <span id="quartoColocadoNome">Amanda</span>
-                                <span id="quartoColocadoPontuação">7 Pontos</span>
+                                <span id="RankingquartoColocado">4º</span>
+                                <span id="RankingquartoColocadoNome"></span>
+                                <span id="RankingquartoColocadoPontuação"></span>
                             </div>
                             <div class="quintoLugar">
-                                <span id="quintoColocado">5º</span>
-                                <span id="quintoColocadoNome">Daniel</span>
-                                <span id="quintoColocadoPontuação">6 Pontos</span>
+                                <span id="RankingquintoColocado">5º</span>
+                                <span id="RankingquintoColocadoNome"></span>
+                                <span id="RankingquintoColocadoPontuação"></span>
                             </div>
                         </div>
                     </div>
@@ -105,24 +105,24 @@
                     <div class="infoWidged">
                         <div class="widgetRanking">
                             <div class="primeiroLugar">
-                                <span id="primeiroColocado">Humor mais votado:</span>
-                                <span id="primeiroColocadoNome">Feliz</span>
+                                <span>Humor mais votado:</span>
+                                <span id="formularioHumor"></span>
                             </div>
                             <div class="segundoLugar">
-                                <span id="segundoColocado">Genero mais votado</span>
-                                <span id="segundoColocadoNome">Hip-Hop/Rap</span>
+                                <span>Genero mais votado</span>
+                                <span id="formularioGenero"></span>
                             </div>
                             <div class="terceiroLugar">
-                                <span id="terceiroColocado">Modo de descoberta mais votado</span>
-                                <span id="terceiroColocadoNome">App de Streaming</span>
+                                <span>Modo de descoberta mais votado</span>
+                                <span id="formularioDescoberta"></span>
                             </div>
                             <div class="quartoLugar">
-                                <span id="quartoColocado">Internacional ou nacional:</span>
-                                <span id="quartoColocadoNome">Internacional</span>
+                                <span>Internacional ou nacional:</span>
+                                <span id="formularioNacionalidade"></span>
                             </div>
                             <div class="quintoLugar">
-                                <span id="quintoColocado">O que é mais importante numa música:</span>
-                                <span id="quintoColocadoNome">Melodia</span>
+                                <span>O que é mais importante numa música:</span>
+                                <span id="formularioMscImportante"></span>
                             </div>
                         </div>
                     </div>
@@ -137,7 +137,9 @@
 
     <script>
         nomeUsuario.innerHTML = sessionStorage.NOME_USUARIO;
-        var listaScore = []
+        var listaScore = [];
+        var listaRanking = [];
+        var listaForm = [];
         fetch("/dashboard/infoDashboard").then(res => {
             if (!res.ok) {
                 throw new Error(`Erro na solicitação : ${res.statusText}`);
@@ -147,6 +149,27 @@
             .then(res => {
                 listaScore = res;
             });
+
+            fetch("/dashboard/infoRanking").then(res => {
+            if (!res.ok) {
+                throw new Error(`Erro na solicitação : ${res.statusText}`);
+            }
+            return res.json();
+        })
+            .then(res => {
+                listaRanking = res;
+            });
+
+            fetch("/dashboard/infoFormulario").then(res => {
+            if (!res.ok) {
+                throw new Error(`Erro na solicitação : ${res.statusText}`);
+            }
+            return res.json();
+        })
+            .then(res => {
+                listaForm = res;
+            });
+        
 
         function gerarGrafico() {
             var ctx = document.getElementById('myChart').getContext('2d');
@@ -221,16 +244,39 @@
             });
         }
 
+        function gerarRanking() {
+            RankingprimeiroColocadoNome.innerHTML = `${listaRanking[0].nome}`
+            RankingprimeiroColocadoPontuação.innerHTML = `${listaRanking[0].pontuacao}`
+
+            RankingsegundoColocadoNome.innerHTML = `${listaRanking[1].nome}`
+            RankingsegundoColocadoPontuação.innerHTML = `${listaRanking[1].pontuacao}`
+
+            RankingterceiroColocadoNome.innerHTML = `${listaRanking[2].nome}`
+            RankingterceiroColocadoPontuação.innerHTML = `${listaRanking[2].pontuacao}`
+
+            RankingquartoColocadoNome.innerHTML = `${listaRanking[3].nome}`
+            RankingquartoColocadoPontuação.innerHTML = `${listaRanking[3].pontuacao}`
+
+            RankingquintoColocadoNome.innerHTML = `${listaRanking[4].nome}`
+            RankingquintoColocadoPontuação.innerHTML = `${listaRanking[4].nome}`
+}
+function gerarFormulario() {
+    formularioHumor.innerHTML = `${listaForm[0].humor}`
+    formularioGenero.innerHTML = `${listaForm[0].genero}`
+    formularioDescoberta.innerHTML = `${listaForm[0].descoberta}`
+    formularioNacionalidade.innerHTML = `${listaForm[0].nacionalidade}`
+    formularioMscImportante.innerHTML = `${listaForm[0].mscImportante}`
+}
         setTimeout(() => {
             gerarGrafico()
+            gerarRanking()
+            gerarFormulario()
         }, 1000);
-
+        
         function funcaoSair() {
             sessionStorage.clear
             window.location = "index.html";
         };
-
-
     </script>
 </body>
 

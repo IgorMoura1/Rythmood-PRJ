@@ -10,7 +10,7 @@ function buscarDashboard() {
 
 
 function buscarRanking() {
-    var instrucao = `select score as Pontuação, nome as Nome from ranking join usuario on fkUsuario = id order by score desc limit 5;`
+    var instrucao = `select score as pontuacao, nome from ranking join usuario on fkUsuario = id order by score desc limit 5;`
 
     console.log("Executando a instrução SQL \n" + instrucao);
     return database.executar(instrucao);
@@ -18,12 +18,15 @@ function buscarRanking() {
 
 
 
+
 function buscarFormulario() {
-    var instrucao = `select humor, count(humor) from formulario group by humor limit 1;
-    select genero, count(genero) from formulario group by genero limit 1;
-    select descoberta, count(descoberta) from formulario group by descoberta limit 1;
-    select nacionalidade, count(nacionalidade) from formulario group by nacionalidade limit 1;
-    select mscImportante, count(mscImportante) from formulario group by mscImportante limit 1;`
+    var instrucao = 
+    `SELECT
+    (SELECT humor FROM formulario GROUP BY humor ORDER BY COUNT(humor) DESC LIMIT 1) AS humor,
+    (SELECT genero FROM formulario GROUP BY genero ORDER BY COUNT(genero) DESC LIMIT 1) AS genero,
+    (SELECT descoberta FROM formulario GROUP BY descoberta ORDER BY COUNT(descoberta) DESC LIMIT 1) AS descoberta,
+    (SELECT nacionalidade FROM formulario GROUP BY nacionalidade ORDER BY COUNT(nacionalidade) DESC LIMIT 1) AS nacionalidade,
+    (SELECT mscImportante FROM formulario GROUP BY mscImportante ORDER BY COUNT(mscImportante) DESC LIMIT 1) AS mscImportante;`
 
     console.log("Executando a instrução SQL \n" + instrucao);
     return database.executar(instrucao);
