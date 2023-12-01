@@ -17,7 +17,6 @@ var empresasRouter = require("./src/routes/empresas");
 var gameRouter = require("./src/routes/game");
 var formularioRouter = require("./src/routes/formulario");
 var dashboardRouter = require("./src/routes/dashboard");
-var goDJrouter = require("./src/routes/goDJ")
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -34,7 +33,6 @@ app.use("/empresas", empresasRouter);
 app.use("/game", gameRouter);
 app.use("/formulario", formularioRouter);
 app.use("/dashboard", dashboardRouter);
-app.use("/goDJ", goDJRouter);
 
 app.listen(PORTA, function () {
     console.log(`Servidor do seu site já está rodando! Acesse o caminho a seguir para visualizar: http://localhost:${PORTA} \n

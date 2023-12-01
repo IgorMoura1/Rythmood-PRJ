@@ -3,7 +3,8 @@
 
 <head>
     <link rel="stylesheet" href="login.css">
-    <title>Flux - Cadastro</title>
+    <title>Rythmood - Cadastro</title>
+    <link rel="shortcut icon" type="imagex/png" href="site/assets/imgs/Logo Rythmood Icon.ico">
 </head>
 
 <body>
@@ -12,14 +13,8 @@
     <section id="left"></section>
     <section id="right"></section>
     <div class="login">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-            </div>
-        </div>
         <div class="container">
             <div class="card card-cadastro">
-                <h2>Bem-vindo!</h2>
                 <div id="login">
                     <div class="form-boxCadastro">
                         <div class="form-valueCadastro">
@@ -87,10 +82,17 @@
         var senhaVar = document.getElementById('senha_input').value;
         var confirmacaoSenhaVar = document.getElementById('confirmacao_senha_input').value;
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            mensagem_erro.innerHTML =
-                "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
-            return false;
+                alert(`Todos os campos em branco`)
+        } else if (nomeVar.length < 3)  {
+            alert (`Nome muito curto!`)
+        } else if (emailVar.indexOf('@') == -1 || emailVar.indexOf('.com') == -1 && emailVar.indexOf('.school') == -1) {
+            alert(`O email digitado não corresponde ao formato de email correto!`)
+        } else if (senhaVar != confirmacaoSenhaVar) {
+            alert(`Senhas não correspondem!`)
+        } else if (senhaVar.indexOf('!') == -1 && senhaVar.indexOf('@') == -1 && senhaVar.indexOf('#') == -1 && senhaVar.indexOf('$') == -1 && senhaVar.indexOf('%') == -1 && senhaVar.indexOf('&') == -1 && senhaVar.indexOf('*') == -1 && senhaVar.indexOf('?') == -1 && senhaVar.indexOf('+') == -1 && senhaVar.indexOf('-') == -1 && senhaVar.indexOf('.') == -1 && senhaVar.indexOf(',') == -1) {
+            alert(`Senha não possui caracter especial`)
+        } else if (senhaVar.length < 6) {
+            alert(`Senha muito curta, necessário mais do que 5 caracteres!`)
         } else {
             alert(`Cadastro concluído!`);
         }
@@ -114,22 +116,18 @@
 
                 if (resposta.ok) {
 
-                    mensagem_erro.innerHTML =
-                        "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                    alert(`Cadastro realizado com sucesso! Redirecionando para tela de Login...`)
+                        
 
                     setTimeout(() => {
                         window.location = "login.html";
                     }, 2000);
-
-                    limparFormulario();
-                    finalizarAguardar();
                 } else {
                     throw "Houve um erro ao tentar realizar o cadastro!";
                 }
             })
             .catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
-                finalizarAguardar();
             });
 
         return false;

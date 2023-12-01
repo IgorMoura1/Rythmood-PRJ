@@ -61,9 +61,6 @@ input {
     color: black;
 }
 
-input:focus {
-    border-bottom: 5px solid #eb5b1e;
-}
 
 button {
     display: block;
@@ -92,3 +89,8 @@ label {
     align-items: center;
 }
 
+button:hover {
+    background: black;
+    color: white;
+    border: 1px solid black;
+}
