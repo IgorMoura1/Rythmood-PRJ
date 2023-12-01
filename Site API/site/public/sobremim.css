@@ -12,7 +12,7 @@
 }
 
 :root {
-    --bg-color: #3b2747;
+    --bg-color: #870ad6;
     --text-color: #f8f8f8;
     --secound-color: #a09dab;
     --main-color: #f75023;
@@ -27,91 +27,100 @@ body {
     overflow-x: hidden;
 }
 
-/* -------------------------header------------------------ */
 
-header {
-    position: fixed;
-    top: 0;
-    right: 0;
+
+
+
+/* ====================================================== HEADER ======================================================================== */
+
+.nav {
     width: 100%;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 32px 15%;
-    transition: all ease .45s;
-    height: 60px;
-    background-color: rgba(190, 131, 226, 0.2);
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-}
-
-.logo {
-    font-weight: 600;
-    width: 20%;
-}
-
-.logo img {
-    width: 100%;
-}
-
-.navbar {
-    display: flex;
-}
-
-.navbar a {
-    font-size: var(--p-font);
-    font-weight: 500;
-    color: var(--text-color);
-    margin: 0 25px;
-    transition: all ease .50s;
-}
-
-.navbar a:hover {
-    color: var(--main-color);
-}
-
-.navbar a.active {
-    color: var(--main-color);
-}
-
-.icons {
-    width: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 200px;
-}
-
-
-.icons ion-icon {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.icons {
-    width: 40vh;
     display: flex;
     justify-content: space-between;
+    padding: 2em 1em 2em 2em;
+    font-family: "Poppins", sans-serif;
+    height: 100px;
+    background-color: transparent;
 }
 
-.icons a {
-    display: flex;
-    flex-direction: row;
-    font-weight: inherit;
-    font-weight: 500;
-    list-style: none;
+.nav a {
     text-decoration: none;
-    color: var(--text-color);
-    transition: all ease .2s;
+    text-transform: uppercase;
+    color: #000;
+    padding: 0 1em;
+    font-size: 30px;
+    font-weight: 300;
 }
 
-.icons a:hover{
-    color: var(--main-color);
-    transition: all ease .2s;
+.nav-links span:hover {
+    transform: scale(1.9);
+    color: #eb5b1e;
 }
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes fade-up2 {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes fade-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@media(max-width: 900px) {
+    .nav .nav-links {
+        display: none;
+    }
+
+    .nav {
+        justify-content: center;
+    }
+}
+
+
+.mav-logo img {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    bottom: 25px;
+}
+
+
+
+
+
+
+/* ====================================================== HEADER ======================================================================== */
+
+
+
+
 
 
 section {

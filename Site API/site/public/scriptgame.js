@@ -18,12 +18,12 @@ const questions = [
     ]
   },
   {
-    question: "A música 'Like a Virgin' da Madonna, foi lançado em que ano?",
+    question: "A música 'Like a Virgin' é de qual cantora pop?",
     answers: [
-      { text: "1982", correct: false },
-      { text: "1989", correct: false },
-      { text: "1986", correct: false },
-      { text: "1984", correct: true },
+      { text: "Tina Tuner", correct: false },
+      { text: "Janet Jackson", correct: false },
+      { text: "Whitney Houston", correct: false },
+      { text: "Madonna", correct: true },
     ]
   },
   {
@@ -54,12 +54,12 @@ const questions = [
     ]
   },
   {
-    question: "Em Call of My Name, de The Weeknd a frase 'I almost cut a piece of myself for your life' se refere a qual artista pop?",
+    question: "Em qual cidade o cantor pop The Weeknd nasceu?",
     answers: [
-      { text: "Ariana Grande", correct: false },
-      { text: "Bella Hadid", correct: false },
-      { text: "Rosalia", correct: false },
-      { text: "Selena Gomez", correct: true },
+      { text: "New York", correct: false },
+      { text: "Califórnia", correct: false },
+      { text: "Ottawa", correct: false },
+      { text: "Toronto", correct: true },
     ]
   },
   {

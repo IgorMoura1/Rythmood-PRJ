@@ -12,45 +12,41 @@
     <label>
         <div class="contact-usGame">
             <div class="botoes">
-                <button type="button"> <a href="index.html">QUIZ GAME!</a></button>
+                <button onclick="selecionarGame()">QUIZ GAME!</button>
             </div>
-            <span>QUIZ GAME!</span>
             <div class="formulario">
                 <div class="box">
                 </div>
-                <button onclick="selecionarGame()" type="button">Selecionar!</button>
             </div>
         </div>
         <div class="contact-usForm">
             <div class="botoes">
-                <button type="button"> <a href="index.html">FORMULÁRIO!</a></button>
-
+                <button onclick="selecionarForm()">FORMULÁRIO!</button>
             </div>
-            <span>FORMULÁRIO!</span>
             <div class="formulario">
                 <div class="box">
                 </div>
-                <button onclick="selecionarForm()" type="button">Selecionar!</button>
             </div>
         </div>
     </label>
 </body>
 <script>
     function selecionarGame() {
-        if (sessionStorage.ID_USUARIO.length == 0) {
+        if (sessionStorage.ID_USUARIO == undefined) {
             alert(`Você não está logado, por favor faça login!`)
+            window.location = "login.html"
         } else {
             window.location = "game.html"
         }
     }
     function selecionarForm() {
-        if (sessionStorage.ID_USUARIO.length == 0) {
+        if (sessionStorage.ID_USUARIO == undefined) {
             alert(`Você não está logado, por favor faça login!`)
+            window.location = "login.html"
         } else {
             window.location = "formulario.html"
         }
     }
-
 </script>
 
 </html>
