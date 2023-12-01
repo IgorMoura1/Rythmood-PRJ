@@ -6,6 +6,7 @@
     <link rel="icon" href="assets/imgs/Logo 3.png" type="image/x-icon">
     <link rel="stylesheet" href="login.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="site/assets/imgs/Logo Rythmood Icon.ico">
 </head>
 
 <body>
@@ -96,8 +97,10 @@
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {
+                    alert(`Email ou senha não encontrados!`)
                     console.error(texto);
                     finalizarAguardar(texto);
+                    
                 });
             }
 
